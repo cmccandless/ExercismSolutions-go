@@ -13,10 +13,3 @@ env:
 
 script:
   - make test-all
-
-matrix:
-  include:
-    - go: 1.10.x
-    - go: 1.11.x
-  allow_failures:
-    - go: tip
