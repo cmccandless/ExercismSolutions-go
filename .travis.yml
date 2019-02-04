@@ -1,0 +1,22 @@
+---
+language: go
+sudo: false
+
+go:
+  - 1.10.x
+  - 1.11.x
+  - master
+
+env:
+  - TESTARCH=amd64 RACE=-race
+  - TESTARCH=386
+
+script:
+  - make test-all
+
+matrix:
+  include:
+    - go: 1.10.x
+    - go: 1.11.x
+  allow_failures:
+    - go: tip
